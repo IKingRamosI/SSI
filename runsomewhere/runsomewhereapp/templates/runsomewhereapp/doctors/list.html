@@ -1,0 +1,14 @@
+<!-- hospital/templates/hospital/doctors/list.html -->
+{% extends 'runsomewhereapp/base.html' %}
+
+{% block title %}Doctors{% endblock %}
+
+{% block content %}
+<h2>Doctors</h2>
+<a href="{% url 'doctor_create' %}">Create New Doctor</a>
+<ul>
+    {% for doctor in doctors %}
+    <li>{{ doctor.first_name }} {{ doctor.last_name }} - {{ doctor.specialization }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

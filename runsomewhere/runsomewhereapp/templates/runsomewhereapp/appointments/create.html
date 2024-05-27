@@ -1,0 +1,14 @@
+<!-- hospital/templates/hospital/appointments/create.html -->
+{% extends 'runsomewhereapp/base.html' %}
+
+{% block title %}Create Appointment{% endblock %}
+
+{% block content %}
+<h2>Create Appointment</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'appointment_list' %}">Back to Appointments</a>
+{% endblock %}

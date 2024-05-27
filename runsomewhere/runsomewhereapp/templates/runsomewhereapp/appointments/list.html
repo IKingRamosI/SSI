@@ -1,0 +1,14 @@
+<!-- hospital/templates/hospital/appointments/list.html -->
+{% extends 'runsomewhereapp/base.html' %}
+
+{% block title %}Appointments{% endblock %}
+
+{% block content %}
+<h2>Appointments</h2>
+<a href="{% url 'appointment_create' %}">Create New Appointment</a>
+<ul>
+    {% for appointment in appointments %}
+    <li>{{ appointment.date }} - {{ appointment.doctor }} with {{ appointment.patient }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

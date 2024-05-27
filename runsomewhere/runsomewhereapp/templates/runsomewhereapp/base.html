@@ -1,0 +1,31 @@
+<!-- hospital/templates/hospital/base.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <title>{% block title %}Hospital Run Some Where{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>Hospital Run Some Where</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'department_list' %}">Departments</a></li>
+                <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+                <li><a href="{% url 'patient_list' %}">Patients</a></li>
+                <li><a href="{% url 'appointment_list' %}">Appointments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Hospital Run Some Where</p>
+    </footer>
+</body>
+
+</html>
