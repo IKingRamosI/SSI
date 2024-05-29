@@ -1,5 +1,3 @@
 pip install -r requirements.txt
 
-path para o projeto:
-
-py manage.py runsslserver --certificate C:/Users/alexm/Desktop/SSI/crl/cert.pem --key C:/Users/alexm/Desktop/SSI/crl/key.pem
+py manage.py runsslserver --certificate ./../crl/cert.pem --key ./../crl/key.pem
