@@ -1,0 +1,6 @@
+django
+cryptography
+werkzeug
+django-extensions
+pyOpenSSL
+python-decouple
