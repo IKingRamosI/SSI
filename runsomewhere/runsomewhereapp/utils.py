@@ -1,4 +1,5 @@
 # hospital/utils.py
+import datetime
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.backends import default_backend
@@ -20,6 +21,7 @@ def encrypt_data(data):
     
     # Pad data to be a multiple of the block size
     padder = padding.PKCS7(algorithms.AES.block_size).padder()
+
     padded_data = padder.update(data.encode()) + padder.finalize()
     
     # Encrypt the padded data

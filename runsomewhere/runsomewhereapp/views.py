@@ -59,7 +59,7 @@ def doctor_create(request):
             form.save()
             return redirect('doctor_list')
     else:
-        form = DoctorForm()
+        form = DoctorForm(instance=None, dep_instance=Department.objects.all())
     return render(request, 'runsomewhereapp/doctors/create.html', {'form': form})
 
 def patient_list(request):
@@ -72,7 +72,7 @@ def patient_list(request):
             'id': patient.id,
             'first_name': decrypt_data(patient.first_name),
             'last_name': decrypt_data(patient.last_name),
-            'date_of_birth': decrypt_data(patient.date_of_birth),
+            'date_of_birth': patient.date_of_birth,
             'gender': decrypt_data(patient.gender),
             'email': decrypt_data(patient.email),
             'phone': decrypt_data(patient.phone),
@@ -118,5 +118,5 @@ def appointment_create(request):
             form.save()
             return redirect('appointment_list')
     else:
-        form = AppointmentForm()
+        form = AppointmentForm(instance=None, doc_instance=Doctor.objects.all(), pat_instance=Patient.objects.all())
     return render(request, 'runsomewhereapp/appointments/create.html', {'form': form})

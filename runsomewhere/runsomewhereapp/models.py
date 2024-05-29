@@ -46,7 +46,7 @@ class Patient(models.Model):
     def encrypt_sensitive_data(self):
         self.first_name = encrypt_data(self.first_name)
         self.last_name = encrypt_data(self.last_name)
-        self.date_of_birth = encrypt_data(self.date_of_birth)
+        self.date_of_birth = self.date_of_birth
         self.gender = encrypt_data(self.gender)
         self.email = encrypt_data(self.email)
         self.phone = encrypt_data(self.phone)
