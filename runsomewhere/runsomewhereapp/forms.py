@@ -1,7 +1,6 @@
 from django import forms
 
-from .utils import encrypt_data
-from .models import Department, Doctor, Patient, Appointment
+from .models import Department, Doctor, Patient, Appointment, Prescription
 
 class DepartmentForm(forms.ModelForm):
     class Meta:
@@ -22,3 +21,8 @@ class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
         fields = ['doctor', 'patient', 'date', 'reason']
+
+class PrescriptionForm(forms.ModelForm):
+    class Meta:
+        model = Prescription
+        fields = ['appointment', 'medication', 'instructions']

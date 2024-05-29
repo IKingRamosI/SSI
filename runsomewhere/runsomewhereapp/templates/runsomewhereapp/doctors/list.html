@@ -8,7 +8,7 @@
 <a href="{% url 'doctor_create' %}">Create New Doctor</a>
 <ul>
     {% for doctor in doctors %}
-    <li>{{ doctor.first_name }} {{ doctor.last_name }} - {{ doctor.specialization }}</li>
+    <li>{{ doctor.first_name }} {{ doctor.last_name }} - {{ doctor.department }} - {{ doctor.specialization }}</li>
     {% endfor %}
 </ul>
 {% endblock %}

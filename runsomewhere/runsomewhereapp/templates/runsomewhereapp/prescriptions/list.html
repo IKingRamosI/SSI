@@ -1,0 +1,13 @@
+{% extends 'runsomewhereapp/base.html' %}
+
+{% block title %}Prescriptions{% endblock %}
+
+{% block content %}
+<h2>Prescriptions</h2>
+<a href="{% url 'prescription_create' %}">Create New Prescription</a>
+<ul>
+    {% for prescription in prescriptions %}
+    <li>{{ prescription.appointment }} - {{ prescription.medication }} - {{ prescription.instructions }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

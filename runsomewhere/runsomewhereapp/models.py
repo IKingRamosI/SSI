@@ -1,13 +1,13 @@
 from django.db import models
 
-from .utils import encrypt_data
+from .utils import decrypt_data, encrypt_data
 
 class Department(models.Model):
     name = models.CharField(max_length=1024)
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return decrypt_data(self.name)
     
     def encrypt_sensitive_data(self):
         self.name = encrypt_data(self.name)
@@ -22,7 +22,7 @@ class Doctor(models.Model):
     phone = models.CharField(max_length=1024)
 
     def __str__(self):
-        return f"Dr. {self.first_name} {self.last_name}"
+        return f"Dr. {decrypt_data(self.first_name)} {decrypt_data(self.last_name)}"
     
     def encrypt_sensitive_data(self):
         self.first_name = encrypt_data(self.first_name)
@@ -41,12 +41,12 @@ class Patient(models.Model):
     address = models.TextField(max_length=1024)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{decrypt_data(self.first_name)} {decrypt_data(self.last_name)}"
     
     def encrypt_sensitive_data(self):
         self.first_name = encrypt_data(self.first_name)
         self.last_name = encrypt_data(self.last_name)
-        self.date_of_birth = encrypt_data(self.date_of_birth)
+        self.date_of_birth = self.date_of_birth
         self.gender = encrypt_data(self.gender)
         self.email = encrypt_data(self.email)
         self.phone = encrypt_data(self.phone)
@@ -55,14 +55,14 @@ class Patient(models.Model):
 class Appointment(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    date = models.DateTimeField()
+    date = models.DateField()
     reason = models.TextField(max_length=1024)
 
     def __str__(self):
         return f"Appointment with Dr. {self.doctor} for {self.patient} on {self.date}"
     
     def encrypt_sensitive_data(self):
-        self.date = encrypt_data(self.date)
+        self.date = self.date
         self.reason = encrypt_data(self.reason)
 
 class Prescription(models.Model):
