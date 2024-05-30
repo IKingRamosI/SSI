@@ -1,13 +1,7 @@
-# hospital/utils.py
-import datetime
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.backends import default_backend
 import os
-
-# Generate a random 256-bit key (store this securely)
-# key = os.urandom(32)
-# print(key.hex())  # Save this key securely and use it in your project
 
 # Use the securely stored key (this is an example key, use your securely stored key)
 key = bytes.fromhex('3a41bf435f0764d920fefc3bedecf9d8bb875738c31391330a1d50a586dcf589')

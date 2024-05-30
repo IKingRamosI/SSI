@@ -1,0 +1,14 @@
+{% extends 'runsomewhereapp/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="pwd">
+    <button type="submit">Login</button>
+</form>
+{% endblock %}

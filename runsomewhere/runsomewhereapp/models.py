@@ -59,7 +59,7 @@ class Appointment(models.Model):
     reason = models.TextField(max_length=1024)
 
     def __str__(self):
-        return f"Appointment with Dr. {self.doctor} for {self.patient} on {self.date}"
+        return f"Appointment with {self.doctor} for {self.patient} on {self.date}"
     
     def encrypt_sensitive_data(self):
         self.date = self.date

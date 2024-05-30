@@ -9,7 +9,7 @@
             "type": "debugpy",
             "request": "launch",
             "args": [
-                "runserver"
+                "runsslserver --certificate ./../crl/cert.pem --key ./../crl/key.pem"
             ],
             "django": true,
             "autoStartBrowser": false,

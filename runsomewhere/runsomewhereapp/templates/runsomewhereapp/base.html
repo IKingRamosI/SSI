@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    {% block header %}
     <header>
         <h1>Hospital Run Some Where</h1>
         <nav>
@@ -21,6 +22,7 @@
             </ul>
         </nav>
     </header>
+    {% endblock %}
     <main>
         {% block content %}{% endblock %}
     </main>

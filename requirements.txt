@@ -4,3 +4,4 @@ werkzeug
 django-extensions
 pyOpenSSL
 python-decouple
+django-sslserver

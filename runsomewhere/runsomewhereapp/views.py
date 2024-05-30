@@ -1,10 +1,19 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
-from .utils import decrypt_data, encrypt_data
+from .decorators import session_check
+from .utils import decrypt_data
 from .models import Department, Doctor, Patient, Appointment, Prescription
 from .forms import DepartmentForm, DoctorForm, PatientForm, AppointmentForm, PrescriptionForm
 
+def login_view(request):
+    if request.method == 'POST':
+        pwd = request.POST.get('pwd')
+        if pwd == 'c@o123!':
+            request.session['pwd'] = pwd
+            return redirect('department_list')
+    return render(request, 'runsomewhereapp/accounts/login.html')
+
+@session_check(login_url='login_view')
 def department_list(request):
     departments_list = Department.objects.all()
 
@@ -19,6 +28,7 @@ def department_list(request):
 
     return render(request, 'runsomewhereapp/departments/list.html', {'departments': departments})
 
+@session_check(login_url='login_view')
 def department_create(request):
     if request.method == 'POST':
         form = DepartmentForm(request.POST)
@@ -31,6 +41,7 @@ def department_create(request):
         form = DepartmentForm()
     return render(request, 'runsomewhereapp/departments/create.html', {'form': form})
 
+@session_check(login_url='login_view')
 def doctor_list(request):
     doctors_list = Doctor.objects.all()
 
@@ -47,6 +58,7 @@ def doctor_list(request):
     
     return render(request, 'runsomewhereapp/doctors/list.html', {'doctors': doctors})
 
+@session_check(login_url='login_view')
 def doctor_create(request):
     if request.method == 'POST':
         form = DoctorForm(request.POST)
@@ -58,6 +70,7 @@ def doctor_create(request):
         form = DoctorForm()
     return render(request, 'runsomewhereapp/doctors/create.html', {'form': form})
 
+@session_check(login_url='login_view')
 def patient_list(request):
     patients_list = Patient.objects.all()
 
@@ -74,6 +87,7 @@ def patient_list(request):
 
     return render(request, 'runsomewhereapp/patients/list.html', {'patients': patients})
 
+@session_check(login_url='login_view')
 def patient_create(request):
     if request.method == 'POST':
         form = PatientForm(request.POST)
@@ -85,10 +99,12 @@ def patient_create(request):
         form = PatientForm()
     return render(request, 'runsomewhereapp/patients/create.html', {'form': form})
 
+@session_check(login_url='login_view')
 def appointment_list(request):
     appointments = Appointment.objects.all()
     return render(request, 'runsomewhereapp/appointments/list.html', {'appointments': appointments})
 
+@session_check(login_url='login_view')
 def appointment_create(request):
     if request.method == 'POST':
         form = AppointmentForm(request.POST)
@@ -100,10 +116,23 @@ def appointment_create(request):
         form = AppointmentForm()
     return render(request, 'runsomewhereapp/appointments/create.html', {'form': form})
 
+@session_check(login_url='login_view')
 def prescription_list(request):
-    prescriptions = Prescription.objects.all()
+    prescriptions_list = Prescription.objects.all()
+
+    prescriptions = []
+    for prescription in prescriptions_list:
+        decrypted_prescription = {
+            'id': prescription.id,
+            'appointment': prescription.appointment,
+            'medication': decrypt_data(prescription.medication),
+            'instructions': decrypt_data(prescription.instructions),
+        }
+        prescriptions.append(decrypted_prescription)
+
     return render(request, 'runsomewhereapp/prescriptions/list.html', {'prescriptions': prescriptions})
 
+@session_check(login_url='login_view')
 def prescription_create(request):
     if request.method == 'POST':
         form = PrescriptionForm(request.POST)
