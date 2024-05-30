@@ -1,0 +1,6 @@
+WARNING 2024-05-30 21:04:44,680 views -- Invalid Crendentials --
+INFO 2024-05-30 21:04:44,681 middleware Request: POST /
+INFO 2024-05-30 21:04:44,681 middleware Client IP: 127.0.0.1
+INFO 2024-05-30 21:04:44,681 middleware User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0
+INFO 2024-05-30 21:04:44,681 middleware Referrer: https://127.0.0.1:8000/
+INFO 2024-05-30 21:04:44,682 basehttp "POST / HTTP/1.1" 200 576
