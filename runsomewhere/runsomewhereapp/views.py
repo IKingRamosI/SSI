@@ -1,5 +1,8 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
 from .decorators import session_check
 from .utils import decrypt_data
 from .models import Department, Doctor, Patient, Appointment, Prescription
@@ -20,10 +23,16 @@ def login_view(request):
     middleware = RequestResponseLoggingMiddleware(request)
 
     if request.method == "POST":
-        pwd = request.POST.get("pwd")
-        if pwd == "c@o123!":
-            request.session["pwd"] = pwd
-            return redirect("department_list")
+        try:
+            username = request.POST["username"]
+            password = request.POST["password"]
+        except KeyError:
+            return render(request, "website/login.html")
+        if username and password:
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse("department_list"))
         else:
             logger.warning("-- Invalid Crendentials --")
             middleware.process_request(request)

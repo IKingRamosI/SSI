@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 from .utils import decrypt_data, encrypt_data
 
@@ -20,7 +21,8 @@ class Doctor(models.Model):
     specialization = models.CharField(max_length=1024)
     email = models.EmailField(unique=True, max_length=1024)
     phone = models.CharField(max_length=1024)
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    
     def __str__(self):
         return f"Dr. {decrypt_data(self.first_name)} {decrypt_data(self.last_name)}"
     
@@ -39,6 +41,7 @@ class Patient(models.Model):
     email = models.EmailField(unique=True, max_length=1024)
     phone = models.CharField(max_length=1024)
     address = models.TextField(max_length=1024)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{decrypt_data(self.first_name)} {decrypt_data(self.last_name)}"
