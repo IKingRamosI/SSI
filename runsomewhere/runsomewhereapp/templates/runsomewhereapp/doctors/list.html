@@ -5,7 +5,9 @@
 
 {% block content %}
 <h2>Doctors</h2>
+{% if request.user.is_superuser %}
 <a href="{% url 'doctor_create' %}">Create New Doctor</a>
+{% endif %}
 <ul>
     {% for doctor in doctors %}
     <li>{{ doctor.first_name }} {{ doctor.last_name }} - {{ doctor.department }} - {{ doctor.specialization }}</li>

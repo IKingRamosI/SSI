@@ -15,9 +15,20 @@ from .forms import (
 )
 from runsomewhereapp.middleware import RequestResponseLoggingMiddleware
 import logging
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 logger = logging.getLogger("user_events")
+
+
+def isSuperUser(user):
+    return user.is_superuser
+
+
+def honeypot(request):
+    middleware = RequestResponseLoggingMiddleware(request)
+    logger.warning("-- Honey reached --")
+    middleware.process_request(request)
+    return render(request, "runsomewhereapp/accounts/login.html")
 
 
 def login_view(request):
@@ -95,13 +106,19 @@ def doctor_list(request):
     return render(request, "runsomewhereapp/doctors/list.html", {"doctors": doctors})
 
 
-@login_required(login_url="login_view")
+@user_passes_test(isSuperUser, login_url="login_view")
 def doctor_create(request):
     if request.method == "POST":
         form = DoctorForm(request.POST)
         if form.is_valid():
-            form.instance.encrypt_sensitive_data()
-            form.save()
+            doctor = form.save(commit=False)
+            doctor.user = User.objects.create_user(
+                form.cleaned_data["email"],
+                form.cleaned_data["email"],
+                request.POST["password"],
+            )
+            doctor.encrypt_sensitive_data()
+            doctor.save()
             return redirect("doctor_list")
     else:
         form = DoctorForm()
@@ -131,8 +148,14 @@ def patient_create(request):
     if request.method == "POST":
         form = PatientForm(request.POST)
         if form.is_valid():
-            form.instance.encrypt_sensitive_data()
-            form.save()
+            patient = form.save(commit=False)
+            patient.user = User.objects.create_user(
+                form.cleaned_data["email"],
+                form.cleaned_data["email"],
+                request.POST["password"],
+            )
+            patient.encrypt_sensitive_data()
+            patient.save()
             return redirect("patient_list")
     else:
         form = PatientForm()

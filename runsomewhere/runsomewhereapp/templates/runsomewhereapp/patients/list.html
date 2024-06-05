@@ -5,7 +5,7 @@
 
 {% block content %}
 <h2>Patients</h2>
-<a href="{% url 'patient_create' %}">Create New Patient</a>
+    <a href="{% url 'patient_create' %}">Create New Patient</a>
 <ul>
     {% for patient in patients %}
     <li>{{ patient.first_name }} {{ patient.last_name }} - {{ patient.email }} - {{ patient.phone }}</li>
