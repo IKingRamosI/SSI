@@ -15,6 +15,7 @@ from .forms import (
 )
 from runsomewhereapp.middleware import RequestResponseLoggingMiddleware
 import logging
+from django.contrib.auth.decorators import login_required
 
 logger = logging.getLogger("user_events")
 
@@ -27,7 +28,7 @@ def login_view(request):
             username = request.POST["username"]
             password = request.POST["password"]
         except KeyError:
-            return render(request, "website/login.html")
+            return render(request, "runsomewhereapp/login.html")
         if username and password:
             user = authenticate(username=username, password=password)
             if user is not None:
@@ -44,7 +45,7 @@ def logoutView(request):
     return redirect("login_view")
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def department_list(request):
     departments_list = Department.objects.all()
 
@@ -62,7 +63,7 @@ def department_list(request):
     )
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def department_create(request):
     if request.method == "POST":
         form = DepartmentForm(request.POST)
@@ -76,7 +77,7 @@ def department_create(request):
     return render(request, "runsomewhereapp/departments/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def doctor_list(request):
     doctors_list = Doctor.objects.all()
 
@@ -94,7 +95,7 @@ def doctor_list(request):
     return render(request, "runsomewhereapp/doctors/list.html", {"doctors": doctors})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def doctor_create(request):
     if request.method == "POST":
         form = DoctorForm(request.POST)
@@ -107,7 +108,7 @@ def doctor_create(request):
     return render(request, "runsomewhereapp/doctors/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def patient_list(request):
     patients_list = Patient.objects.all()
 
@@ -125,7 +126,7 @@ def patient_list(request):
     return render(request, "runsomewhereapp/patients/list.html", {"patients": patients})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def patient_create(request):
     if request.method == "POST":
         form = PatientForm(request.POST)
@@ -138,7 +139,7 @@ def patient_create(request):
     return render(request, "runsomewhereapp/patients/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def appointment_list(request):
     appointments = Appointment.objects.all()
     return render(
@@ -148,7 +149,7 @@ def appointment_list(request):
     )
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def appointment_create(request):
     if request.method == "POST":
         form = AppointmentForm(request.POST)
@@ -161,7 +162,7 @@ def appointment_create(request):
     return render(request, "runsomewhereapp/appointments/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def prescription_list(request):
     prescriptions_list = Prescription.objects.all()
 
@@ -182,7 +183,7 @@ def prescription_list(request):
     )
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def prescription_create(request):
     if request.method == "POST":
         form = PrescriptionForm(request.POST)
