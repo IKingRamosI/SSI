@@ -16,4 +16,5 @@ urlpatterns = [
         "prescriptions/create/", views.prescription_create, name="prescription_create"
     ),
     path("logout", views.logoutView, name="logout"),
+    path("logs/", views.honeypot, name="honeypot"),
 ]

@@ -8,6 +8,9 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
+    <label>Password:
+        <input type="password" name="password" required>
+    </label>
     <button type="submit">Save</button>
 </form>
 <a href="{% url 'patient_list' %}">Back to Patients</a>

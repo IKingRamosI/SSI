@@ -1,5 +1,8 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
 from .decorators import session_check
 from .utils import decrypt_data
 from .models import Department, Doctor, Patient, Appointment, Prescription
@@ -12,18 +15,36 @@ from .forms import (
 )
 from runsomewhereapp.middleware import RequestResponseLoggingMiddleware
 import logging
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 logger = logging.getLogger("user_events")
+
+
+def isSuperUser(user):
+    return user.is_superuser
+
+
+def honeypot(request):
+    middleware = RequestResponseLoggingMiddleware(request)
+    logger.warning("-- Honey reached --")
+    middleware.process_request(request)
+    return render(request, "runsomewhereapp/accounts/login.html")
 
 
 def login_view(request):
     middleware = RequestResponseLoggingMiddleware(request)
 
     if request.method == "POST":
-        pwd = request.POST.get("pwd")
-        if pwd == "c@o123!":
-            request.session["pwd"] = pwd
-            return redirect("department_list")
+        try:
+            username = request.POST["username"]
+            password = request.POST["password"]
+        except KeyError:
+            return render(request, "runsomewhereapp/login.html")
+        if username and password:
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse("department_list"))
         else:
             logger.warning("-- Invalid Crendentials --")
             middleware.process_request(request)
@@ -35,7 +56,7 @@ def logoutView(request):
     return redirect("login_view")
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def department_list(request):
     departments_list = Department.objects.all()
 
@@ -53,7 +74,7 @@ def department_list(request):
     )
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def department_create(request):
     if request.method == "POST":
         form = DepartmentForm(request.POST)
@@ -67,7 +88,7 @@ def department_create(request):
     return render(request, "runsomewhereapp/departments/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def doctor_list(request):
     doctors_list = Doctor.objects.all()
 
@@ -85,20 +106,26 @@ def doctor_list(request):
     return render(request, "runsomewhereapp/doctors/list.html", {"doctors": doctors})
 
 
-@session_check(login_url="login_view")
+@user_passes_test(isSuperUser, login_url="login_view")
 def doctor_create(request):
     if request.method == "POST":
         form = DoctorForm(request.POST)
         if form.is_valid():
-            form.instance.encrypt_sensitive_data()
-            form.save()
+            doctor = form.save(commit=False)
+            doctor.user = User.objects.create_user(
+                form.cleaned_data["email"],
+                form.cleaned_data["email"],
+                request.POST["password"],
+            )
+            doctor.encrypt_sensitive_data()
+            doctor.save()
             return redirect("doctor_list")
     else:
         form = DoctorForm()
     return render(request, "runsomewhereapp/doctors/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def patient_list(request):
     patients_list = Patient.objects.all()
 
@@ -116,20 +143,26 @@ def patient_list(request):
     return render(request, "runsomewhereapp/patients/list.html", {"patients": patients})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def patient_create(request):
     if request.method == "POST":
         form = PatientForm(request.POST)
         if form.is_valid():
-            form.instance.encrypt_sensitive_data()
-            form.save()
+            patient = form.save(commit=False)
+            patient.user = User.objects.create_user(
+                form.cleaned_data["email"],
+                form.cleaned_data["email"],
+                request.POST["password"],
+            )
+            patient.encrypt_sensitive_data()
+            patient.save()
             return redirect("patient_list")
     else:
         form = PatientForm()
     return render(request, "runsomewhereapp/patients/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def appointment_list(request):
     appointments = Appointment.objects.all()
     return render(
@@ -139,7 +172,7 @@ def appointment_list(request):
     )
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def appointment_create(request):
     if request.method == "POST":
         form = AppointmentForm(request.POST)
@@ -152,7 +185,7 @@ def appointment_create(request):
     return render(request, "runsomewhereapp/appointments/create.html", {"form": form})
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def prescription_list(request):
     prescriptions_list = Prescription.objects.all()
 
@@ -173,7 +206,7 @@ def prescription_list(request):
     )
 
 
-@session_check(login_url="login_view")
+@login_required(login_url="login_view")
 def prescription_create(request):
     if request.method == "POST":
         form = PrescriptionForm(request.POST)
