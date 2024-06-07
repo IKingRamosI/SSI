@@ -5,3 +5,146 @@ INFO 2024-05-30 21:04:44,681 middleware User Agent: Mozilla/5.0 (Windows NT 10.0
 INFO 2024-05-30 21:04:44,681 middleware Referrer: https://127.0.0.1:8000/
 INFO 2024-05-30 21:04:44,682 basehttp "POST / HTTP/1.1" 200 576
 INFO 2024-06-05 03:16:39,060 autoreload C:\Users\alexm\Desktop\SSI\runsomewhere\runsomewhere\urls.py changed, reloading.
+INFO 2024-06-06 23:03:31,084 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:05:03,650 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:05:40,079 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:07:00,603 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:07:04,849 basehttp "GET / HTTP/1.1" 301 0
+INFO 2024-06-06 23:07:04,852 basehttp code 400, message Bad request version ('½Jô|í5¼e')
+ERROR 2024-06-06 23:07:04,852 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:04,854 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03L')
+ERROR 2024-06-06 23:07:04,854 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:21,453 basehttp code 400, message Bad request version ('::\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S\x1a\x1a\x00\x00\x00')
+ERROR 2024-06-06 23:07:21,453 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:21,454 basehttp code 400, message Bad request version ('Xn\x9fêoGÃ¡ö¾Ó+\x97ÍnßJë&]×SYz\x04^\x94Â\x87¥2£õÿ`»\x177Ãjë¯\x81P\x0ex8j\x0ec\x8aKáQ\x1b\x8e$g©\x12ä±J9n\x88>"RT\x06Ë\x8cßÛ\x84R¢LË!\x91qâè_èí')
+ERROR 2024-06-06 23:07:21,455 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:51,636 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:07:54,380 basehttp code 400, message Bad request version ('?\x88÷')
+ERROR 2024-06-06 23:07:54,381 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:54,382 basehttp code 400, message Bad request version ('\x92\x90-\x9bê\x16\x84ô\x86²0È®\x16\x99\x87\x08\x08õ\x84')
+ERROR 2024-06-06 23:07:54,382 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:55,157 basehttp code 400, message Bad request version ('\x04QT\x82ül<4ª!\x1b')
+ERROR 2024-06-06 23:07:55,157 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:55,158 basehttp code 400, message Bad request version ('_¢t>\x02¶´ù\x82)9Ó\x8a')
+ERROR 2024-06-06 23:07:55,158 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:56,270 basehttp code 400, message Bad request version ('7ÅÚÝD2')
+ERROR 2024-06-06 23:07:56,271 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:07:56,272 basehttp code 400, message Bad request version ("ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063JJ\x00\x00\x003\x04ï\x04í\x8a\x8a\x00\x01\x00c\x99\x04ÀÎ.¸J\x00IBiA\x8b'`\x82\x9e")
+ERROR 2024-06-06 23:07:56,272 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:08:03,939 basehttp code 400, message Bad request version ("\x1bM$IU¤c+âç(s\x17\x8f\x95º^tÓ!ÉT<\x11Û\x14'Q\x9fYÉ\x88\x11ZH\x83z¯\x92[\x84!\x08»f\x1a\x83F¶V3¨¾\x13×dE;Sn\\\x96\x11z\x06èªµ\x13")
+ERROR 2024-06-06 23:08:03,939 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:08:03,941 basehttp code 400, message Bad request version ('ü')
+ERROR 2024-06-06 23:08:03,941 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:08:07,365 basehttp code 400, message Bad request version ('\x02h2\x08http/1.1\x003\x04ï\x04í')
+ERROR 2024-06-06 23:08:07,365 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:08:07,366 basehttp code 400, message Bad request version ('}<\x8eeE\x18Õ[S\'ÃÕ\x83GUh\x9dÙ¦"Ñ\x91y;-q\x18hÜ\x08,ì,Ê\x90fÀojÅà$±\x8chéMö¦n\x84.N\x17g¤·Y\x94ã\x06tÙ¡ÿ?\x03')
+ERROR 2024-06-06 23:08:07,366 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:08:44,796 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:09:20,107 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:09:23,308 basehttp code 400, message Bad request version ('¯\x9cB{æ\xadú\x8cûG>\x15[\x94\x84Ï]\x95\x15')
+ERROR 2024-06-06 23:09:23,308 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:23,309 basehttp code 400, message Bad request version ('\x91kFVç·Ê\x07áÊ\x8c')
+ERROR 2024-06-06 23:09:23,309 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:26,636 basehttp code 400, message Bad request version ('Á\x96Ê')
+ERROR 2024-06-06 23:09:26,636 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:26,638 basehttp code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s')
+ERROR 2024-06-06 23:09:26,638 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:43,339 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03@*\x90')
+ERROR 2024-06-06 23:09:43,340 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:43,341 basehttp code 400, message Bad request version ('ÛpÏ>Di\x00\x05\x00\x03\x02h2\x00\x17\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00-\x00\x02\x01\x01\x00')
+ERROR 2024-06-06 23:09:43,342 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:47,667 basehttp code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S\x8a\x8a\x00\x00\x00')
+ERROR 2024-06-06 23:09:47,667 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:47,669 basehttp code 400, message Bad request version ('~\x84¸\x95t9e\x07?|\x8c\x06/¨½Ûì\x9bwÄ\x03Ä\x9a\x1a\x00Z7$')
+ERROR 2024-06-06 23:09:47,669 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:54,118 basehttp code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93\x8a\x8a\x00\x00\x00')
+ERROR 2024-06-06 23:09:54,118 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:09:54,120 basehttp code 400, message Bad request version ('\x00')
+ERROR 2024-06-06 23:09:54,120 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:10:09,714 basehttp code 400, message Bad request version ("\x00\x00\x00&À,À+À0À/À$À#À(À'À")
+ERROR 2024-06-06 23:10:09,715 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:10:09,752 basehttp - Broken pipe from ('127.0.0.1', 58177)
+INFO 2024-06-06 23:10:10,589 basehttp code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03')
+ERROR 2024-06-06 23:10:10,589 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:10:10,591 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03$§Ñ')
+ERROR 2024-06-06 23:10:10,591 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:15:33,960 basehttp code 400, message Bad request syntax ('\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03')
+ERROR 2024-06-06 23:15:33,961 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:15:33,962 basehttp code 400, message Bad request version ('§î\x92\x8b\x82K¢Õ\\Ï×©\x15]K\x93\x02\x93q\x93t\x07ä\x04*§Z')
+ERROR 2024-06-06 23:15:33,962 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:15:35,382 basehttp code 400, message Bad request version ('ç¼=8Àoï')
+ERROR 2024-06-06 23:15:35,382 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:15:35,384 basehttp code 400, message Bad request version ('\x88\x9d{eÆbuM~µ5þ%r¦(N\x1aÌ\x02\x14\x19\x0f\x06\x19Ê^Ô<ãWÈ\x96t¹ÜÁ;ÕF\x0e9\x95\x9f¢¹0\x13Ñ+\x11ç¶S')
+ERROR 2024-06-06 23:15:35,384 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:16:06,617 basehttp code 400, message Bad request version ('\x01\x00´´\x91±\x81Vz\x98')
+ERROR 2024-06-06 23:16:06,617 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:16:06,619 basehttp code 400, message Bad request version ('\x99oý')
+ERROR 2024-06-06 23:16:06,619 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:16:07,312 basehttp code 400, message Bad request version ('2£<\x03L¬þ\x99É\x90±\x95¼h\x8dÌGI\x0f)\x06!Ã\x87c1\x1aUùÈ\x15ÉU\x1b\x91¶Ùÿ¨\x0fJÎÛºÄeC\x05\x15\x8b\x0eäµÔîÑÊè')
+ERROR 2024-06-06 23:16:07,312 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:16:07,313 basehttp code 400, message Bad request version ("XvÃ'¨^\x97\x12Öx\x92É;#\x904¢\x00")
+ERROR 2024-06-06 23:16:07,313 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2024-06-06 23:18:36,804 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:18:39,726 basehttp "GET / HTTP/1.1" 200 636
+INFO 2024-06-06 23:18:39,859 basehttp "GET /static/css/styles.css HTTP/1.1" 200 479
+WARNING 2024-06-06 23:18:39,976 log Not Found: /favicon.ico
+WARNING 2024-06-06 23:18:39,976 basehttp "GET /favicon.ico HTTP/1.1" 404 4479
+INFO 2024-06-06 23:24:11,958 basehttp "POST / HTTP/1.1" 200 636
+INFO 2024-06-06 23:24:20,698 basehttp "POST / HTTP/1.1" 200 636
+INFO 2024-06-06 23:26:20,551 autoreload Watching for file changes with StatReloader
+INFO 2024-06-06 23:26:26,061 basehttp "POST / HTTP/1.1" 200 636
+INFO 2024-06-06 23:26:33,546 basehttp "POST / HTTP/1.1" 302 0
+INFO 2024-06-06 23:26:33,562 basehttp "GET /departments/ HTTP/1.1" 200 943
+INFO 2024-06-06 23:35:47,392 basehttp "GET /departments/create/ HTTP/1.1" 200 1444
+INFO 2024-06-06 23:35:56,485 basehttp "POST /departments/create/ HTTP/1.1" 302 0
+INFO 2024-06-06 23:35:56,493 basehttp "GET /departments/ HTTP/1.1" 200 992
+INFO 2024-06-06 23:35:57,855 basehttp "GET /departments/create/ HTTP/1.1" 200 1444
+INFO 2024-06-06 23:36:17,718 basehttp "POST /departments/create/ HTTP/1.1" 302 0
+INFO 2024-06-06 23:36:17,728 basehttp "GET /departments/ HTTP/1.1" 200 1052
+INFO 2024-06-06 23:36:43,810 basehttp "GET /departments/create/ HTTP/1.1" 200 1444
+INFO 2024-06-06 23:38:07,926 basehttp "POST /departments/create/ HTTP/1.1" 302 0
+INFO 2024-06-06 23:38:07,934 basehttp "GET /departments/ HTTP/1.1" 200 1098
+INFO 2024-06-06 23:47:12,226 basehttp "GET /doctors/ HTTP/1.1" 200 875
+INFO 2024-06-06 23:54:36,289 basehttp "GET /patients/ HTTP/1.1" 200 932
+INFO 2024-06-06 23:54:37,806 basehttp "GET /patients/create/ HTTP/1.1" 200 2453
+INFO 2024-06-07 00:00:49,147 basehttp "POST /patients/create/ HTTP/1.1" 302 0
+INFO 2024-06-07 00:00:49,156 basehttp "GET /patients/ HTTP/1.1" 200 991
+INFO 2024-06-07 00:01:07,067 basehttp "GET /appointments/ HTTP/1.1" 200 948
+INFO 2024-06-07 00:06:19,221 basehttp "GET /appointments/create/ HTTP/1.1" 200 1842
+INFO 2024-06-07 00:27:39,661 basehttp "GET /appointments/create/ HTTP/1.1" 200 1842
+INFO 2024-06-07 00:27:41,135 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:27:42,124 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:27:43,557 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:27:53,639 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:27:59,356 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:28:03,941 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:28:04,061 basehttp "GET /static/css/styles.css HTTP/1.1" 200 479
+WARNING 2024-06-07 00:28:04,079 log Not Found: /favicon.ico
+WARNING 2024-06-07 00:28:04,079 basehttp "GET /favicon.ico HTTP/1.1" 404 4479
+INFO 2024-06-07 00:29:54,175 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:29:55,482 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:30:07,856 autoreload Watching for file changes with StatReloader
+INFO 2024-06-07 00:30:09,676 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:30:32,285 autoreload C:\Users\Pedro Ramos\Documents\ISCTE\3º Ano\2º Semestre\SSI\Site\SSI\runsomewhere\runsomewhereapp\views.py changed, reloading.
+INFO 2024-06-07 00:30:33,115 autoreload Watching for file changes with StatReloader
+INFO 2024-06-07 00:30:33,300 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:30:34,041 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:30:51,074 autoreload Watching for file changes with StatReloader
+INFO 2024-06-07 00:30:53,525 basehttp "GET /doctors/ HTTP/1.1" 200 884
+INFO 2024-06-07 00:31:43,837 basehttp "GET /doctors/ HTTP/1.1" 200 933
+INFO 2024-06-07 00:31:53,280 basehttp "GET /doctors/ HTTP/1.1" 200 875
+INFO 2024-06-07 00:31:56,789 basehttp "GET /doctors/ HTTP/1.1" 200 924
+INFO 2024-06-07 00:32:00,369 basehttp "GET /doctors/create/ HTTP/1.1" 200 2327
+INFO 2024-06-07 00:32:35,901 basehttp "POST /doctors/create/ HTTP/1.1" 302 0
+INFO 2024-06-07 00:32:35,911 basehttp "GET /doctors/ HTTP/1.1" 200 985
+INFO 2024-06-07 00:32:54,834 autoreload C:\Users\Pedro Ramos\Documents\ISCTE\3º Ano\2º Semestre\SSI\Site\SSI\runsomewhere\runsomewhereapp\views.py changed, reloading.
+INFO 2024-06-07 00:32:55,557 autoreload Watching for file changes with StatReloader
+INFO 2024-06-07 00:32:56,887 basehttp "GET /doctors/ HTTP/1.1" 200 936
+INFO 2024-06-07 00:32:59,576 basehttp "GET /appointments/ HTTP/1.1" 200 948
+INFO 2024-06-07 00:33:01,248 basehttp "GET /appointments/create/ HTTP/1.1" 200 1896
+INFO 2024-06-07 00:33:43,131 basehttp "POST /appointments/create/ HTTP/1.1" 302 0
+INFO 2024-06-07 00:33:43,142 basehttp "GET /appointments/ HTTP/1.1" 200 1022
+INFO 2024-06-07 00:33:54,748 basehttp "GET /prescriptions/ HTTP/1.1" 200 892
+INFO 2024-06-07 00:33:55,924 basehttp "GET /prescriptions/create/ HTTP/1.1" 200 1768
+INFO 2024-06-07 00:34:25,374 basehttp "POST /prescriptions/create/ HTTP/1.1" 302 0
+INFO 2024-06-07 00:34:25,386 basehttp "GET /prescriptions/ HTTP/1.1" 200 1031

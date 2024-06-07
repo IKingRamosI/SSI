@@ -75,6 +75,7 @@ def department_list(request):
 
 
 @login_required(login_url="login_view")
+@user_passes_test(isSuperUser, login_url="login_view")
 def department_create(request):
     if request.method == "POST":
         form = DepartmentForm(request.POST)
@@ -106,6 +107,7 @@ def doctor_list(request):
     return render(request, "runsomewhereapp/doctors/list.html", {"doctors": doctors})
 
 
+@login_required(login_url="login_view")
 @user_passes_test(isSuperUser, login_url="login_view")
 def doctor_create(request):
     if request.method == "POST":
